@@ -47,6 +47,8 @@
       text-align: center;
       justify-content: center;
       align-items: center;
+      padding: 10px;
+      color: palegoldenrod;
     }
 
     .img1 {
@@ -79,7 +81,7 @@
   <script>
     // 페이지 로드 시 이전 상태 복원
     document.addEventListener("DOMContentLoaded", (event) => {
-      const buckets = document.querySelectorAll(".bucket");
+      const buckets = document.querySelectorAll(".content");
       buckets.forEach((bucket, index) => {
         // 로컬 스토리지에서 상태 읽기
         const isDone = localStorage.getItem("bucket" + index) === "done";
@@ -90,7 +92,7 @@
     });
 
     // 버킷 리스트 클릭 이벤트
-    const buckets = document.querySelectorAll(".bucket");
+    const buckets = document.querySelectorAll(".content");
     buckets.forEach((bucket, index) => {
       bucket.addEventListener("click", function () {
         // 클래스 토글
