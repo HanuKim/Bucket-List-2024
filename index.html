@@ -38,7 +38,7 @@
       gap: 15px;
     }
 
-    .content {
+    .bucket {
       width: 160px;
       height: 170px;
       display: flex;
@@ -47,16 +47,18 @@
       text-align: center;
       justify-content: center;
       align-items: center;
-      padding: 10px;
-      color: palegoldenrod;
+      padding: 15px;
+
     }
 
     .img1 {
       background-image: url("https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/bucketList/bucket-red.png");
+      color: palegoldenrod;
     }
 
     .img2 {
       background-image: url("https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/bucketList/bucket-lightred.png");
+      color: tomato;
     }
   </style>
 </head>
@@ -64,12 +66,12 @@
 <body class="bg">
   <h1 class="title">✨ Bucket List 2024 ✨</h1>
   <div class="wrapper">
-    <div class="content img1">다이어트 하고 체중 유지하기!</div>
-    <div class="content img2">적금 넣기</div>
-    <div class="content img1">블로그 매주 1개씩, 깃헙 잔디 한 달에 최소 1개씩</div>
-    <div class="content img2">FE 관련 강의 1개 완강하고 결과물 1개 만들기</div>
-    <div class="content img1">고전 1권, 읽고 싶은 책 1권 읽기</div>
-    <div class="content img2">AI 강의 듣고 결과물 1개</div>
+    <div class="bucket img1">다이어트 하고 체중 유지하기!</div>
+    <div class="bucket img2">적금 넣기</div>
+    <div class="bucket img1">블로그 매주 1개씩, 깃헙 잔디 한 달에 최소 1개씩</div>
+    <div class="bucket img2">FE 관련 강의 1개 완강하고 결과물 1개 만들기</div>
+    <div class="bucket img1">고전 1권, 읽고 싶은 책 1권 읽기</div>
+    <div class="bucket img2">AI 강의 듣고 결과물 1개</div>
   </div>
   <script src="script.js"></script>
 
@@ -81,7 +83,7 @@
   <script>
     // 페이지 로드 시 이전 상태 복원
     document.addEventListener("DOMContentLoaded", (event) => {
-      const buckets = document.querySelectorAll(".content");
+      const buckets = document.querySelectorAll(".bucket");
       buckets.forEach((bucket, index) => {
         // 로컬 스토리지에서 상태 읽기
         const isDone = localStorage.getItem("bucket" + index) === "done";
@@ -92,7 +94,7 @@
     });
 
     // 버킷 리스트 클릭 이벤트
-    const buckets = document.querySelectorAll(".content");
+    const buckets = document.querySelectorAll(".bucket");
     buckets.forEach((bucket, index) => {
       bucket.addEventListener("click", function () {
         // 클래스 토글
